@@ -19,6 +19,7 @@
             --text-dark: #2C2A29;
             --card-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
             --kpay-blue: #1A52B8;
+            --telegram-blue: #0088cc;
         }
 
         * {
@@ -168,7 +169,7 @@
             border: 2px solid var(--primary-gold);
             border-radius: 12px;
             padding: 25px;
-            margin-bottom: 35px;
+            margin-bottom: 25px;
             box-shadow: 0 4px 15px rgba(212, 175, 55, 0.15);
         }
 
@@ -227,119 +228,74 @@
             font-weight: bold;
         }
 
-        /* Donor Section Title & Total Summary */
-        .donor-header-box {
+        /* --- Telegram Instruction Box & Button --- */
+        .telegram-container {
+            background-color: #F0F8FF;
+            border: 1px solid #BEE3F8;
+            border-radius: 14px;
+            padding: 20px;
             text-align: center;
-            margin-bottom: 25px;
+            margin-bottom: 30px;
+            box-shadow: 0 4px 12px rgba(0, 136, 204, 0.08);
         }
 
-        .donor-title {
+        .telegram-instruction-title {
             color: var(--maroon);
-            font-size: 1.4rem;
             font-weight: bold;
+            font-size: 1.15rem;
             margin-bottom: 12px;
         }
 
-        .total-summary-card {
+        .telegram-steps {
+            text-align: left;
+            max-width: 520px;
+            margin: 0 auto 20px auto;
+            font-size: 1.02rem;
+            color: #2D3748;
+        }
+
+        .telegram-steps ol {
+            padding-left: 20px;
+        }
+
+        .telegram-steps li {
+            margin-bottom: 8px;
+        }
+
+        .telegram-steps li:last-child {
+            margin-bottom: 0;
+        }
+
+        .telegram-btn {
             display: inline-flex;
             align-items: center;
             justify-content: center;
-            gap: 12px;
-            background: linear-gradient(135deg, var(--maroon) 0%, #6b1422 100%);
-            color: var(--accent-gold);
-            padding: 12px 30px;
-            border-radius: 50px;
-            font-size: 1.15rem;
-            font-weight: bold;
-            box-shadow: 0 4px 15px rgba(74, 14, 23, 0.25);
-            border: 1px solid var(--primary-gold);
-        }
-
-        .total-summary-card .amount {
-            color: #FFFFFF;
-            font-size: 1.3rem;
-            text-shadow: 0 1px 3px rgba(0,0,0,0.3);
-        }
-
-        /* --- Desktop Table Styling (For PC & Large Screens) --- */
-        .donor-table-wrapper {
-            margin-bottom: 30px;
-            overflow-x: auto;
-        }
-
-        .donor-table {
-            width: 100%;
-            border-collapse: separate;
-            border-spacing: 0;
-            background: #FFFFFF;
-            border-radius: 12px;
-            overflow: hidden;
-            box-shadow: var(--card-shadow);
-            border: 1px solid rgba(212, 175, 55, 0.4);
-        }
-
-        .donor-table thead {
-            background: linear-gradient(135deg, var(--maroon) 0%, #6b1422 100%);
-            color: var(--accent-gold);
-        }
-
-        .donor-table th {
-            padding: 15px;
+            gap: 10px;
+            background: linear-gradient(135deg, #0088cc 0%, #006699 100%);
+            color: #ffffff;
             font-size: 1.1rem;
             font-weight: bold;
-            text-align: left;
-            border-bottom: 2px solid var(--primary-gold);
+            padding: 14px 28px;
+            border-radius: 50px;
+            text-decoration: none;
+            box-shadow: 0 6px 18px rgba(0, 136, 204, 0.3);
+            border: 2px solid #ffffff;
+            transition: all 0.3s ease;
         }
 
-        .donor-table th:first-child {
-            text-align: center;
-            width: 80px;
+        .telegram-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 22px rgba(0, 136, 204, 0.45);
+            background: linear-gradient(135deg, #0099e6 0%, #0077b3 100%);
         }
 
-        .donor-table th:last-child {
-            text-align: right;
-            width: 220px;
+        .telegram-btn svg {
+            width: 24px;
+            height: 24px;
+            fill: #ffffff;
         }
 
-        .donor-table td {
-            padding: 15px;
-            font-size: 1.05rem;
-            border-bottom: 1px solid rgba(212, 175, 55, 0.2);
-            color: var(--text-dark);
-            transition: background-color 0.2s ease;
-        }
-
-        .donor-table tr:last-child td {
-            border-bottom: none;
-        }
-
-        .donor-table tr:nth-child(even) {
-            background-color: #FAF8F5;
-        }
-
-        .donor-table tr:hover td {
-            background-color: rgba(243, 229, 171, 0.3);
-        }
-
-        .donor-number-cell {
-            text-align: center;
-            font-weight: bold;
-            color: var(--deep-gold);
-        }
-
-        .donor-name-cell {
-            font-weight: 700;
-            color: var(--maroon);
-        }
-
-        .donor-amount-cell {
-            text-align: right;
-            font-weight: bold;
-            color: var(--deep-gold);
-            font-size: 1.15rem;
-        }
-
-        /* --- Mobile Responsive (Convert Table to Cards for Mobile/iPhone) --- */
+        /* --- Mobile Responsive --- */
         @media (max-width: 650px) {
             body {
                 padding: 10px 5px;
@@ -365,95 +321,13 @@
                 align-items: flex-start;
                 gap: 4px;
             }
-            .total-summary-card {
-                flex-direction: column;
-                gap: 4px;
-                padding: 10px 20px;
-                border-radius: 16px;
+            .telegram-container {
+                padding: 15px 12px;
+            }
+            .telegram-btn {
                 width: 100%;
-            }
-
-            /* Transform Table to Card View on Mobile */
-            .donor-table, 
-            .donor-table thead, 
-            .donor-table tbody, 
-            .donor-table th, 
-            .donor-table td, 
-            .donor-table tr {
-                display: block;
-            }
-
-            .donor-table thead {
-                display: none; /* Hide Table Header on Mobile */
-            }
-
-            .donor-table tr {
-                background: #FFFFFF !important;
-                border: 1px solid rgba(212, 175, 55, 0.4);
-                border-radius: 14px;
-                padding: 18px;
-                margin-bottom: 15px;
-                position: relative;
-                box-shadow: var(--card-shadow);
-                overflow: hidden;
-            }
-
-            .donor-table tr::before {
-                content: "";
-                position: absolute;
-                top: 0;
-                left: 0;
-                width: 100%;
-                height: 4px;
-                background: linear-gradient(90deg, var(--deep-gold), var(--accent-gold), var(--primary-gold));
-            }
-
-            .donor-table td {
-                padding: 0;
-                border: none;
-            }
-
-            .donor-number-cell {
-                position: absolute;
-                top: 15px;
-                right: 15px;
-                background: #FAF8F5;
-                color: var(--deep-gold);
-                width: 28px;
-                height: 28px;
-                border-radius: 50%;
-                display: flex;
-                align-items: center;
-                justify-content: center;
-                font-size: 0.85rem;
-                font-weight: bold;
-                border: 1px solid rgba(212, 175, 55, 0.3);
-            }
-
-            .donor-name-cell {
-                font-size: 1.1rem;
-                margin-bottom: 15px;
-                padding-right: 35px;
-                line-height: 1.5;
-            }
-
-            .donor-amount-cell {
-                background-color: #FAF8F5;
-                border-radius: 8px;
-                padding: 10px 12px;
-                text-align: right;
-                border-left: 3px solid var(--primary-gold);
-                font-size: 1.15rem;
-            }
-
-            .donor-amount-cell::before {
-                content: "လှူဒါန်းငွေ";
-                display: block;
-                font-size: 0.8rem;
-                color: #666;
-                font-weight: normal;
-                margin-bottom: 2px;
-                text-align: right;
+                font-size: 1rem;
+                padding: 12px 20px;
             }
         }
 
@@ -533,10 +407,29 @@
                 </div>
             </div>
 
-            
+            <!-- Telegram Group Link & Instruction Section -->
+            <div class="telegram-container">
+                <div class="telegram-instruction-title">
+                    📌 အလှူငွေပေးပို့အတည်ပြုရန် လမ်းညွှန်ချက်
+                </div>
+                
+                <div class="telegram-steps">
+                    <ol>
+                        <li>အထက်ပါ အကောင့်သို့ အလှူငွေ လွှဲပြောင်းပြီးပါက အောက်ပါ <strong>"Telegram Group သို့ ဝင်ရောက်ရန်"</strong> ခလုတ်ကို နှိပ်၍ Telegram Group ထို့ ဝင်ရောက်ပေးပါ။</li>
+                        <li>Telegram Group တွင်းသို့ **ငွေလွှဲပြောင်းမှု Screenshot**၊ **အလှူရှင် အမည်အပြည့်အစုံ** နှင့် **လှူဒါန်းငွေ ပမာဏ** တို့ကို ပေးပို့ပေးပါရန် မေတ္တာရပ်ခံအပ်ပါသည်။</li>
+                    </ol>
+                </div>
+
+                <a href="https://t.me/+c_y1JbTGeNI2ZWJl" class="telegram-btn" target="_blank">
+                    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M12 0C5.37 0 0 5.37 0 12c0 6.63 5.37 12 12 12s12-5.37 12-12C24 5.37 18.63 0 12 0zm5.56 8.16l-2.02 9.51c-.15.68-.56.84-1.13.53l-3.11-2.29-1.5 1.44c-.17.17-.31.31-.63.31l.22-3.17 5.77-5.21c.25-.22-.05-.34-.39-.12l-7.13 4.49-3.07-.96c-.67-.21-.68-.67.14-.99l12.01-4.63c.56-.21 1.05.13.84.89z"/>
+                    </svg>
+                    Telegram Group သို့ ဝင်ရောက်ရန် နှိပ်ပါ
+                </a>
+            </div>
+
             <!-- Invitation Closing -->
             <div class="footer-action">
-               <p> </p>
                 <div class="sadhu-text">
                     🙏 သာဓု... သာဓု... သာဓု 🙏
                 </div>
@@ -567,7 +460,10 @@
                     }
                 });
 
-                document.getElementById('totalAmount').textContent = formatNumberToMyanmar(total);
+                const totalEl = document.getElementById('totalAmount');
+                if (totalEl) {
+                    totalEl.textContent = formatNumberToMyanmar(total);
+                }
             }
 
             calculateTotal();
