@@ -163,6 +163,151 @@
             font-weight: 600;
         }
 
+        /* --- Dhamma Desana Dropdown Premium Styling --- */
+        .dhamma-desana-card {
+            background: linear-gradient(145deg, #ffffff 0%, #fffdf8 100%);
+            border: 2px solid var(--primary-gold);
+            border-radius: 16px;
+            padding: 22px;
+            margin-bottom: 28px;
+            box-shadow: 0 8px 24px rgba(153, 101, 21, 0.12);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .dhamma-desana-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, var(--deep-gold), var(--primary-gold), var(--accent-gold), var(--primary-gold), var(--deep-gold));
+        }
+
+        .dhamma-desana-header {
+            text-align: center;
+            margin-bottom: 18px;
+            padding-bottom: 14px;
+            border-bottom: 1px dashed rgba(212, 175, 55, 0.4);
+        }
+
+        .dhamma-desana-header h3 {
+            color: var(--maroon);
+            font-size: 1.05rem;
+            font-weight: 600;
+            line-height: 1.6;
+            margin-bottom: 6px;
+        }
+
+        .dhamma-desana-header h2 {
+            color: var(--deep-gold);
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 4px;
+        }
+
+        .dhamma-desana-header p {
+            color: #666666;
+            font-size: 0.95rem;
+        }
+
+        /* Dropdown Container */
+        .dhamma-details {
+            background: #FAF7F0;
+            border: 1.5px solid rgba(212, 175, 55, 0.5);
+            border-radius: 12px;
+            overflow: hidden;
+            transition: all 0.3s ease;
+        }
+
+        .dhamma-details[open] {
+            box-shadow: 0 4px 16px rgba(74, 14, 23, 0.08);
+            border-color: var(--primary-gold);
+        }
+
+        /* Dropdown Header (Click Area) */
+        .dhamma-summary {
+            background: linear-gradient(135deg, var(--maroon) 0%, #2D080E 100%);
+            color: var(--accent-gold);
+            padding: 16px 20px;
+            font-size: 1.15rem;
+            font-weight: bold;
+            cursor: pointer;
+            list-style: none; /* Hide default arrow */
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            user-select: none;
+            transition: background 0.3s ease, color 0.3s ease;
+        }
+
+        .dhamma-summary::-webkit-details-marker {
+            display: none; /* Hide default arrow for Webkit */
+        }
+
+        .dhamma-summary:hover {
+            background: linear-gradient(135deg, #5B121C 0%, #380B12 100%);
+            color: #FFFFFF;
+        }
+
+        /* Custom Dropdown Arrow Icon */
+        .dhamma-summary .arrow-icon {
+            width: 22px;
+            height: 22px;
+            fill: none;
+            stroke: var(--accent-gold);
+            stroke-width: 2.5;
+            stroke-linecap: round;
+            stroke-linejoin: round;
+            transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            flex-shrink: 0;
+            margin-left: 10px;
+        }
+
+        .dhamma-details[open] .dhamma-summary .arrow-icon {
+            transform: rotate(180deg);
+        }
+
+        /* Dropdown Inner Content */
+        .dhamma-content {
+            padding: 22px;
+            background-color: #FFFFFF;
+            color: var(--text-dark);
+            line-height: 1.9;
+            font-size: 1.05rem;
+            border-top: 2px solid var(--primary-gold);
+        }
+
+        .dhamma-content p {
+            margin-bottom: 14px;
+            text-align: justify;
+            text-justify: inter-word;
+        }
+
+        .pali-text {
+            color: var(--maroon);
+            font-weight: bold;
+        }
+
+        /* Numbered Dhamma Points */
+        .dhamma-point {
+            background: #FFFDF8;
+            border: 1px solid rgba(212, 175, 55, 0.35);
+            border-left: 4px solid var(--maroon);
+            border-radius: 8px;
+            padding: 16px;
+            margin: 16px 0;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.03);
+        }
+
+        .dhamma-point-title {
+            color: var(--maroon);
+            font-weight: bold;
+            font-size: 1.1rem;
+            margin-bottom: 8px;
+        }
+
         /* Donation Contact Section */
         .donation-section {
             background: #FFFFFF;
@@ -316,6 +461,16 @@
                 padding: 15px;
                 font-size: 1rem;
             }
+            .dhamma-desana-card {
+                padding: 15px;
+            }
+            .dhamma-summary {
+                font-size: 1rem;
+                padding: 14px 15px;
+            }
+            .dhamma-content {
+                padding: 15px;
+            }
             .info-item {
                 flex-direction: column;
                 align-items: flex-start;
@@ -380,36 +535,90 @@
                     SNF YGN သာသနာပြုအဖွဲ့ တရားထောက်များနှင့်ယောဂီများ စုပေါင်းကောင်းမှုအလှူ အနေဖြင့် ကမ္ဗည်းထိုး လှူဒါန်းသွားပါမည်။ ကုသိုလ်ပါဝင် လှူဒါန်းနိုင်ကြပါကြောင်း ရိုသေစွာ အသိပေး နှိုးဆော်အပ်ပါသည်။
                 </p>
             </div>
-           <!-- Donation Board Button Block Start -->
-<div style="font-family: 'Padauk', sans-serif; display: flex; justify-content: center; width: 100%; padding: 10px;">
-    <a href="https://kogyiphozaw.github.io/Donation-board-/" 
-       target="_blank" 
-       rel="noopener noreferrer" 
-       style="display: flex; align-items: center; justify-content: space-between; width: 100%; max-width: 380px; background: linear-gradient(135deg, #d97706, #b45309, #78350f); color: #ffffff; font-weight: bold; padding: 16px 20px; border-radius: 16px; text-decoration: none; box-shadow: 0 10px 15px -3px rgba(180, 83, 9, 0.3); transition: all 0.3s ease;">
         
-        <!-- Left Side Icon & Text -->
-        <div style="display: flex; align-items: center; gap: 12px;">
-            <div style="background-color: rgba(255, 255, 255, 0.2); padding: 10px; border-radius: 12px; display: flex; align-items: center; justify-content: center;">
-                <svg width="24" height="24" fill="none" stroke="currentColor" viewBox="0 0 24 24" style="color: #ffffff;">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"></path>
-                </svg>
-            </div>
-            <div style="text-align: left;">
-                <div style="font-size: 18px; font-weight: bold; line-height: 1.2;">အလှူရှင်စာရင်း ကြည့်ရန်</div>
-                <div style="font-size: 12px; opacity: 0.8; font-weight: normal; margin-top: 2px;">Donation Board သို့ သွားမည်</div>
-            </div>
-        </div>
+            <!-- Dhamma Desana Drop-down Card -->
+            <div class="dhamma-desana-card">
+                <div class="dhamma-desana-header">
+                    <h3>တိုက်ခွဲအမှတ် (၃၂) သဲအင်းဂူဝိပဿနာ ဓမ္မရိပ်သာ နှင့် သာသနာ့ပျိုးဥယျာဉ်ကျောင်းတိုက် ၏ ဦးစီးပဓါန နာယက ဆရာတော်</h3>
+                    <h2>အသျှင်စန္ဒိမာ (အောင်လံ)</h2>
+                    <p>(၇၄)နှစ်ပြည့်မွေးနေ့ (၁၃-၅-၂၀၂၆) တွင် ဟောကြားတော်မူသော</p>
+                </div>
 
-        <!-- Right Side Arrow Icon -->
-        <div style="width: 32px; height: 32px; background-color: rgba(255, 255, 255, 0.2); border-radius: 50%; display: flex; align-items: center; justify-content: center;">
-            <svg width="18" height="18" fill="none" stroke="currentColor" viewBox="0 0 24 24" style="color: #ffffff;">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
-            </svg>
-        </div>
-    </a>
-</div>
-<!-- Donation Board Button Block End -->
-             
+                <details class="dhamma-details">
+                    <summary class="dhamma-summary">
+                        <span>📖 " လောက၌ အကောင်းဆုံး အမွန်မြတ်ဆုံး အလုပ်သုံးမျိုး တရားတော် "</span>
+                        <svg class="arrow-icon" viewBox="0 0 24 24">
+                            <path d="M6 9l6 6 6-6"></path>
+                        </svg>
+                    </summary>
+
+                    <div class="dhamma-content">
+                        <p>လူ့ဘဝရတဲ့ အချိန် ခဏလေးမှာ <span class="pali-text">"အပ္ပမာဒေန ဘိက္ခဝေ သမ္ပာဒေထ"</span> — မမေ့မလျော့သော သတိဖြင့် နေရမည်လို့ မြတ်စွာဘုရားရှင်က ဟောထားပါတယ်။</p>
+
+                        <p>အဲဒီအထဲမှာ <span class="pali-text">"သဒ္ဓမ္မဿဝနံ အတိဒုလ္လဘံ"</span> — သူတော်ကောင်းတရားကို နာကြားရခြင်းသည် အလွန်ရနိုင်ခဲ၏။</p>
+
+                        <p>အဲဒီ ရနိုင်ခဲတဲ့ သူတော်ကောင်းအဆုံးအမကို မပြတ်ပွားများ အားထုတ်နေရမယ်။</p>
+
+                        <p>လူ့ဘဝဟာ ရခဲလှသည့်အတွက်ကြောင့် မပြုတ်ကျမီ ခဏတာကာလလေးမှာ အကောင်းဆုံး၊ အမွန်မြတ်ဆုံး၊ အထွဋ်အထိပ်ဆုံးဖြစ်တဲ့ အမြတ်ဆုံးအလုပ်ကို လုပ်ကြရပါမယ်။</p>
+
+                        <p>ဦးဇင်းက အကောင်းဆုံးအလုပ်ကိုမှ ကြိုက်တယ်။ တရားဟောပြီဆိုရင်လည်း လောကမှာ ဘာအကောင်းဆုံးလဲလို့ ရွေးတယ်။</p>
+
+                        <p>ယောဂီတို့ မှတ်ထားရမှာက -</p>
+
+                        <div class="dhamma-point">
+                            <div class="dhamma-point-title">နံပါတ် (၁) - မိမိကိုယ်တိုင် တရားအားထုတ်ခြင်းသည် အကောင်းဆုံးဖြစ်သည်။</div>
+                            <p style="margin: 0;">အဲဒီထက်ကောင်းတာ လောကမှာ ဘာမှမရှိဘူး။ အသက်ကိုလှူ အဲလောက်မကောင်းဘူး။ ရွှေတိဂုံဘုရားလို စေတီကြီးတည် အဲလောက်မကောင်းဘူး။ ဘုံဗိမာန်ကြီးတွေ၊ ပြာသာဒ်ကြီးတွေ ကြိုက်သလောက်ဆောက်၊ ရွှေပြားတွေကပ် အဲလောက်မမြတ်ဘူး။</p>
+                            <p style="margin: 8px 0 0 0;">ကိုယ်တိုင်တရားအားထုတ်တာ အမြတ်ဆုံးပဲ။ အဲဒီထက် မြတ်တာ ဘာရှိသေးလဲ။ လောကမှာ ဘာအကောင်းဆုံးလဲလို့ ဦးဇင်း ဆင်ခြင်တယ်။ တစ်ခါတလေ တစ်ဝါတွင်းလုံး ကြာသွားတယ်။ ဘယ်လောက် လူ့ဘဝကြီးက တန်ဖိုးရှိလဲဆိုတာ ဆင်ခြင်တယ်။</p>
+                        </div>
+
+                        <div class="dhamma-point">
+                            <div class="dhamma-point-title">နံပါတ် (၂) - တရားကျင့်ချင်သည့်၊ တရားအားထုတ်ချင်သည့် ပုဂ္ဂိုလ်ကို တရားအားထုတ်ဖို့ တိုက်တွန်းပြီး တရားပြသပေးခြင်းသည် နံပါတ်နှစ် အကောင်းဆုံးဖြစ်သည်။</div>
+                            <p style="margin: 0;">သံသရာဘဝပေါင်း မြောက်မြားစွာ အို နာ သေ ဒုက္ခ၊ အသည်းနာ ခွဲခွာရမည့် လွမ်းခြင်း ဆွေးခြင်း ဒုက္ခ သောကပေါင်း မြောက်မြားစွာမှ လွတ်မြောက်အောင် မဲဆွယ်စည်းရုံးပြီး ကယ်တင်တာ၊ တရားပြတာ အကောင်းဆုံးပဲ။</p>
+                            <p style="margin: 8px 0 0 0;">အသက်ကိုလှူ၊ မျက်လုံးလှူ ကြိုက်တာလှူ အဲလောက်မကောင်းဘူး။ ရွှေတိဂုံလို စေတီတည် လှူတာလည်း တရားပြသည့် အလှူလောက် မကောင်းဘူး။</p>
+                            <p style="margin: 8px 0 0 0;"><span class="pali-text">"သဗ္ဗဒါနံ ဓမ္မဒါနံ ဇိနာတိ"</span> — တရားအလှူသည် အလှူအပေါင်းတို့ထက် မြတ်တယ်။ ဦးဇင်းက အကောင်းဆုံးကိုပဲ ရွေးချယ်လုပ်ပါတယ်။</p>
+                        </div>
+
+                        <div class="dhamma-point">
+                            <div class="dhamma-point-title">နံပါတ် (၃) - ခုလို တရားပြ၊ တရားကျင့်ကြမည့် ပုဂ္ဂိုလ်များ တရားပြနိုင်၊ တရားကျင့်နိုင်အောင် ဓမ္မာရုံကြီးများ ဆောက်လုပ်ပေးခြင်း၊ ဝေယျာဝစ္စ စောင့်ရှောက်ပေးခြင်း၊ ရေ မီး လှူဒါန်းပေးခြင်းနှင့် ဆွမ်း အာဟာရ လှူဒါန်းပေးခြင်းတို့ ဖြစ်သည်။</div>
+                            <p style="margin: 0;">သူတို့မရှိရင် တရားပြ၊ တရားကျင့်ချင်လို့ မရပါဘူး။ အဲဒါ အမြတ်ဆုံးပဲ။ ဦးဇင်းလည်း အဲဒီအလုပ်ပဲ လုပ်တယ်။</p>
+                        </div>
+
+                        <p>လူ့ဘဝမှာ နေရမှာချင်း အတူတူ၊ သေရမှာချင်း အတူတူ၊ အချိန်ဖြုန်းရမှာချင်း အတူတူ အမြတ်ဆုံး အလုပ်ကိုပဲ လုပ်ကြပါ။</p>
+
+                        <p style="margin-bottom: 0;">အဲဒါကြောင့် ယောဂီတို့ကိုလည်း ဦးဇင်းက အမြတ်ဆုံး အလုပ်ကိုပဲ လုပ်စေချင်ပါတယ်။</p>
+                    </div>
+                </details>
+            </div>
+        
+            <!-- Donation Board Button Block Start -->
+            <div style="font-family: 'Padauk', sans-serif; display: flex; justify-content: center; width: 100%; padding: 10px; margin-bottom: 20px;">
+                <a href="https://kogyiphozaw.github.io/Donation-board-/" 
+                   target="_blank" 
+                   rel="noopener noreferrer" 
+                   style="display: flex; align-items: center; justify-content: space-between; width: 100%; max-width: 380px; background: linear-gradient(135deg, #d97706, #b45309, #78350f); color: #ffffff; font-weight: bold; padding: 16px 20px; border-radius: 16px; text-decoration: none; box-shadow: 0 10px 15px -3px rgba(180, 83, 9, 0.3); transition: all 0.3s ease;">
+                    
+                    <!-- Left Side Icon & Text -->
+                    <div style="display: flex; align-items: center; gap: 12px;">
+                        <div style="background-color: rgba(255, 255, 255, 0.2); padding: 10px; border-radius: 12px; display: flex; align-items: center; justify-content: center;">
+                            <svg width="24" height="24" fill="none" stroke="currentColor" viewBox="0 0 24 24" style="color: #ffffff;">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"></path>
+                            </svg>
+                        </div>
+                        <div style="text-align: left;">
+                            <div style="font-size: 18px; font-weight: bold; line-height: 1.2;">အလှူရှင်စာရင်း ကြည့်ရန်</div>
+                            <div style="font-size: 12px; opacity: 0.8; font-weight: normal; margin-top: 2px;">Donation Board သို့ သွားမည်</div>
+                        </div>
+                    </div>
+
+                    <!-- Right Side Arrow Icon -->
+                    <div style="width: 32px; height: 32px; background-color: rgba(255, 255, 255, 0.2); border-radius: 50%; display: flex; align-items: center; justify-content: center;">
+                        <svg width="18" height="18" fill="none" stroke="currentColor" viewBox="0 0 24 24" style="color: #ffffff;">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
+                        </svg>
+                    </div>
+                </a>
+            </div>
+            <!-- Donation Board Button Block End -->
 
             <!-- Donation Contact Details Section -->
             <div class="donation-section">
@@ -457,7 +666,6 @@
                     Telegram Group သို့ ဝင်ရောက်ရန် နှိပ်ပါ
                 </a>
             </div>
-             
              
             <!-- Invitation Closing -->
             <div class="footer-action">
